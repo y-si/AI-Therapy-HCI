@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI vs Human Therapist Comparison Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Panel 1: AI Conversation -->
+        <div class="panel" id="ai-panel">
+            <div class="panel-header">
+                <span class="panel-number">1</span>
+                <h2>AI Conversation</h2>
+            </div>
+            <div class="chat-container">
+                <div class="message user-message">
+                    I've been feeling really overwhelmed with work lately.
+                </div>
+                <div class="message ai-message">
+                    I understand you're feeling overwhelmed with work. Let's identify the specific sources of stress. Can you list the main tasks that are overwhelming you?
+                </div>
+                <div class="message user-message">
+                    There's just so much to do and not enough time. I can't seem to keep up.
+                </div>
+                <div class="message ai-message">
+                    This feeling of time scarcity is common in high-pressure situations. Let's approach this systematically: What are your top three priorities this week, and how much time do you estimate each requires?
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel 2: Response Comparison -->
+        <div class="panel" id="comparison-panel">
+            <div class="panel-header">
+                <h2>Response Comparison</h2>
+            </div>
+            <div class="comparison-container">
+                <div class="comparison-section">
+                    <h3 class="response-label">Response 1 (to "feeling overwhelmed")</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="highlight-reframing">I understand you're feeling overwhelmed with work.</span>
+                            <span class="highlight-distraction">Let's identify the specific sources of stress.</span>
+                            <span class="highlight-grounding">Can you list the main tasks that are overwhelming you?</span>
+                        </div>
+                        <div class="techniques">
+                            <strong>Key Strategies:</strong>
+                            <span class="technique-tag reframing">Reframing</span>
+                            <span class="technique-tag distraction">Distraction</span>
+                            <span class="technique-tag grounding">Grounding</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="highlight-modeling">That sounds really hard. I'm here with you.</span>
+                            <span class="highlight-grounding">What's that overwhelm feel like for you right now?</span>
+                        </div>
+                        <div class="techniques">
+                            <strong>Key Strategies:</strong>
+                            <span class="technique-tag modeling">Modeling</span>
+                            <span class="technique-tag grounding">Grounding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h3 class="response-label">Response 2 (to "can't keep up")</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="highlight-reframing">This feeling of time scarcity is common in high-pressure situations.</span>
+                            <span class="highlight-distraction">Let's approach this systematically: What are your top three priorities this week, and how much time do you estimate each requires?</span>
+                        </div>
+                        <div class="techniques">
+                            <strong>Key Strategies:</strong>
+                            <span class="technique-tag reframing">Reframing</span>
+                            <span class="technique-tag distraction">Distraction</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="highlight-modeling">I hear you saying you can't keep up, and that must be exhausting.</span>
+                            <span class="highlight-grounding">Before we dive into the tasks, I'm curious—when you notice that feeling of not keeping up, where do you feel it in your body?</span>
+                        </div>
+                        <div class="techniques">
+                            <strong>Key Strategies:</strong>
+                            <span class="technique-tag modeling">Modeling</span>
+                            <span class="technique-tag grounding">Grounding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel 3: Human Conversation -->
+        <div class="panel" id="human-panel">
+            <div class="panel-header">
+                <h2>Human Conversation</h2>
+                <span class="panel-number">2</span>
+            </div>
+            <div class="chat-container">
+                <div class="message user-message">
+                    I've been feeling really overwhelmed with work lately.
+                </div>
+                <div class="message therapist-message">
+                    That sounds really hard. I'm here with you. What's that overwhelm feel like for you right now?
+                </div>
+                <div class="message user-message">
+                    There's just so much to do and not enough time. I can't seem to keep up.
+                </div>
+                <div class="message therapist-message">
+                    I hear you saying you can't keep up, and that must be exhausting. Before we dive into the tasks, I'm curious—when you notice that feeling of not keeping up, where do you feel it in your body?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
