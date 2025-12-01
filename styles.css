@@ -8,6 +8,318 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: #f5f5f5;
     padding: 20px;
+    padding-top: 60px;
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px;
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -11px;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.menu-header {
+    padding: 20px;
+    padding-top: 50px;
+    background-color: #e8e8e8;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.session-list {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.session-item {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+    color: #444;
+}
+
+.session-item:hover {
+    background-color: #f5f5f5;
+}
+
+.session-item.active {
+    background-color: #e8f4e8;
+    border-left: 4px solid #90c695;
+    font-weight: 500;
+}
+
+.menu-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.add-session-btn {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #5a9e5f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-session-btn:hover {
+    background-color: #4a8a4f;
+}
+
+/* Add Session Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.upload-section:last-child {
+    margin-bottom: 0;
+}
+
+.upload-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.upload-dropzone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+.upload-dropzone:hover {
+    border-color: #5a9e5f;
+    background-color: #f9fdf9;
+}
+
+.upload-dropzone.dragover {
+    border-color: #5a9e5f;
+    background-color: #e8f4e8;
+}
+
+.dropzone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropzone-icon {
+    font-size: 32px;
+}
+
+.dropzone-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.dropzone-subtext {
+    font-size: 12px;
+    color: #999;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid #eee;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: #555;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.submit-btn {
+    background-color: #5a9e5f;
+    border: none;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #4a8a4f;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .container {
@@ -45,34 +357,6 @@ body {
     color: #333;
 }
 
-.panel-number {
-    position: absolute;
-    top: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: #90c695;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-#ai-panel .panel-number {
-    left: 10px;
-}
-
-#human-panel .panel-header {
-    justify-content: space-between;
-}
-
-#human-panel .panel-number:first-of-type {
-    position: static;
-    order: 2;
-}
-
 .chat-container {
     flex: 1;
     padding: 20px;
@@ -88,6 +372,20 @@ body {
     max-width: 85%;
     line-height: 1.5;
     position: relative;
+}
+
+.message.clickable {
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.message.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.message.clickable.selected {
+    box-shadow: 0 0 0 3px #88aaff;
 }
 
 .user-message {
@@ -111,6 +409,29 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.comparison-section.hidden {
+    display: none;
+}
+
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #888;
+    font-size: 16px;
+    text-align: center;
+    padding: 40px;
+}
+
+.empty-state.hidden {
+    display: none;
+}
+
+.session-content.hidden {
+    display: none;
 }
 
 .comparison-section {
@@ -163,24 +484,12 @@ body {
     border-radius: 3px;
 }
 
-.highlight-reframing {
-    background-color: #ffd4d4;
-    border-bottom: 2px solid #ff8888;
-}
-
-.highlight-grounding {
-    background-color: #d4e4ff;
-    border-bottom: 2px solid #88aaff;
-}
-
-.highlight-modeling {
-    background-color: #d4ffd4;
-    border-bottom: 2px solid #88ff88;
-}
-
-.highlight-distraction {
-    background-color: #ffe4d4;
-    border-bottom: 2px solid #ffaa88;
+/* Text segments - lightly highlighted by default, fully highlighted on tag click */
+.text-segment {
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: #f5f5f5;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .techniques {
@@ -191,10 +500,6 @@ body {
     font-size: 13px;
 }
 
-.techniques strong {
-    color: #555;
-}
-
 .technique-tag {
     padding: 4px 10px;
     border-radius: 12px;
@@ -203,20 +508,85 @@ body {
     color: white;
 }
 
-.technique-tag.reframing {
-    background-color: #ff8888;
+/* Clickable tags */
+.technique-tag.clickable-tag {
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
 
-.technique-tag.grounding {
-    background-color: #88aaff;
+.technique-tag.clickable-tag:hover {
+    transform: scale(1.05);
 }
 
-.technique-tag.modeling {
-    background-color: #88ff88;
+.technique-tag.clickable-tag.active {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-.technique-tag.distraction {
-    background-color: #ffaa88;
+/* Strategy-specific colors for tags */
+.technique-tag[data-strategy="active-listening"] {
+    background-color: #7c4dff;
+}
+.technique-tag[data-strategy="open-ended-questions"] {
+    background-color: #00bcd4;
+}
+.technique-tag[data-strategy="validation"] {
+    background-color: #ff9800;
+}
+.technique-tag[data-strategy="empathy"] {
+    background-color: #e91e63;
+}
+.technique-tag[data-strategy="normalization"] {
+    background-color: #4caf50;
+}
+.technique-tag[data-strategy="reflection"] {
+    background-color: #9c27b0;
+}
+.technique-tag[data-strategy="cognitive-reframing"] {
+    background-color: #f44336;
+}
+.technique-tag[data-strategy="psychoeducation"] {
+    background-color: #795548;
+}
+.technique-tag[data-strategy="acknowledgement"] {
+    background-color: #607d8b;
+}
+
+/* Strategy-specific highlight colors for text segments */
+.text-segment.highlighted-active-listening {
+    background-color: rgba(124, 77, 255, 0.3);
+    border-bottom: 2px solid #7c4dff;
+}
+.text-segment.highlighted-open-ended-questions {
+    background-color: rgba(0, 188, 212, 0.3);
+    border-bottom: 2px solid #00bcd4;
+}
+.text-segment.highlighted-validation {
+    background-color: rgba(255, 152, 0, 0.3);
+    border-bottom: 2px solid #ff9800;
+}
+.text-segment.highlighted-empathy {
+    background-color: rgba(233, 30, 99, 0.3);
+    border-bottom: 2px solid #e91e63;
+}
+.text-segment.highlighted-normalization {
+    background-color: rgba(76, 175, 80, 0.3);
+    border-bottom: 2px solid #4caf50;
+}
+.text-segment.highlighted-reflection {
+    background-color: rgba(156, 39, 176, 0.3);
+    border-bottom: 2px solid #9c27b0;
+}
+.text-segment.highlighted-cognitive-reframing {
+    background-color: rgba(244, 67, 54, 0.3);
+    border-bottom: 2px solid #f44336;
+}
+.text-segment.highlighted-psychoeducation {
+    background-color: rgba(121, 85, 72, 0.3);
+    border-bottom: 2px solid #795548;
+}
+.text-segment.highlighted-acknowledgement {
+    background-color: rgba(96, 125, 139, 0.3);
+    border-bottom: 2px solid #607d8b;
 }
 
 /* Scrollbar styling */
