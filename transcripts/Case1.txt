@@ -1,0 +1,16 @@
+﻿Client (C): I am feeling sad today
+Therapist (T): Tell me more about why you’re feeling this way today
+* Strategies: Open ended question
+C: I am really stressed because I have two big projects due tomorrow that are worth a lot of my grade
+T: Ah I hear you, tell me about how this stress feels to you right now
+* Strategies: Empathy, validation, open ended question
+C: I feel really guilty and overwhelmed, because I have been procrastinating and have had a lot going on.
+T: Where do you think these feelings of guilt come from?
+* Strategies: Open ended question
+C: I feel guilty that I was not as productive as I should have been
+T: In an ideal world, what would your productivity behaviors look like?
+* Strategies: Open ended question, cognitive reframing kind of
+C: In an ideal world I would love to get all of my work done ahead of time and not procrastinate 
+T: I see I see, how did it feel talking about all of this today?
+* Strategies: Validation, open ended question
+C: It felt great! Thank you so much for your help [REDACTED] 🥰🥰

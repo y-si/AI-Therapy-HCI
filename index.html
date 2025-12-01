@@ -7,25 +7,97 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <div class="menu-header">
+            <h3>Sessions</h3>
+        </div>
+        <ul class="session-list">
+            <li class="session-item active" data-session="session2">
+                PhD Application Anxiety
+            </li>
+            <li class="session-item" data-session="session1">
+                Academic Stress & Procrastination
+            </li>
+            <li class="session-item" data-session="session3">
+                Relationship Breakup
+            </li>
+        </ul>
+        <div class="menu-footer">
+            <button class="add-session-btn" id="add-session-btn">+ Add Session</button>
+        </div>
+    </div>
+
+    <!-- Overlay for closing menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
     <div class="container">
         <!-- Panel 1: AI Conversation -->
         <div class="panel" id="ai-panel">
             <div class="panel-header">
-                <span class="panel-number">1</span>
                 <h2>AI Conversation</h2>
             </div>
-            <div class="chat-container">
+
+            <!-- Session 1: Academic Stress & Procrastination -->
+            <div class="chat-container session-content hidden" data-session="session1">
                 <div class="message user-message">
-                    I've been feeling really overwhelmed with work lately.
+                    I am feeling sad today
                 </div>
-                <div class="message ai-message">
-                    I understand you're feeling overwhelmed with work. Let's identify the specific sources of stress. Can you list the main tasks that are overwhelming you?
+                <div class="message ai-message clickable" data-response-id="ai-1">
+                    I'm sorry to hear that you're feeling sad today. Would you like to share more about what's been going on?
                 </div>
                 <div class="message user-message">
-                    There's just so much to do and not enough time. I can't seem to keep up.
+                    Yeah I am really stressed because I have two big projects due tomorrow that are worth a lot of my grade
                 </div>
-                <div class="message ai-message">
-                    This feeling of time scarcity is common in high-pressure situations. Let's approach this systematically: What are your top three priorities this week, and how much time do you estimate each requires?
+                <div class="message ai-message clickable" data-response-id="ai-2">
+                    It sounds like you're under a lot of pressure with those deadlines coming up. That can be really overwhelming. How have you been managing your time and stress so far with these projects?
+                </div>
+                <div class="message user-message">
+                    I have just been procrastinating becuase I have had a lot going on.
+                </div>
+                <div class="message ai-message clickable" data-response-id="ai-3">
+                    It sounds like there's been a lot on your plate lately, and procrastination can sometimes be our way of coping when things feel too much. It's understandable to feel overwhelmed when you have multiple responsibilities. What do you think might help you break things down into smaller, more manageable tasks? Sometimes, setting small goals and rewarding ourselves with breaks can ease the process. What do you think about that approach?
+                </div>
+                <div class="message user-message">
+                    I think that sounds good!
+                </div>
+                <div class="message ai-message clickable" data-response-id="ai-4">
+                    I'm glad to hear that breaking tasks down feels like a good approach for you. Recognizing a strategy that resonates with you is an important step. Is there a specific small task or first step you're thinking of starting with? Sometimes having a clear starting point can make the larger task feel less daunting. Remember, it's okay to take things one step at a time. Giving yourself permission to do so can also help alleviate some pressure.
+                </div>
+            </div>
+
+            <!-- Session 2: PhD Application Anxiety -->
+            <div class="chat-container session-content" data-session="session2">
+                <div class="message user-message">
+                    Hello! I'm very stressed out right now because I feel very sad about applying to PhD applications.
+                </div>
+                <div class="message ai-message clickable" data-response-id="s2-ai-1">
+                    It's understandable to feel stressed out and sad when facing something as significant as PhD applications. Could you share more about what's been particularly challenging or upsetting about the application process for you? Applying to PhD programs can be an overwhelming experience due to the high expectations and uncertainty involved. It's normal to feel this way, as many others in similar situations experience these emotions too. Sometimes it helps to break down the process into smaller, manageable steps, focusing on one thing at a time. Have you tried any strategies that work for you when dealing with stress? Remember, self-compassion is important during this time. Acknowledging your efforts and the courage it takes to pursue your goals can be empowering.
+                </div>
+                <div class="message user-message">
+                    I'm scared I'm gonna end up on the wrong path in life. I feel like a not insignificant chunk of my applications are programs where I have a decent shot at getting in, but that's likely attributed to the fact that their faculty in question are as technical, but I feel like applying to technical programs is a long-shot when I don't have as much have a pure technical background.
+                </div>
+                <div class="message ai-message clickable" data-response-id="s2-ai-2">
+                    It sounds like you're experiencing a lot of worry about the future and the direction your life might take, which is a common concern when making significant decisions like applying to PhD programs. Feeling uncertain about whether you're on the right path is a normal part of the decision-making process. It's understandable to be concerned about applying to programs where you don't perceive yourself as having the exact background they might be looking for. What aspects of these technical programs appeal to you, and how do you see them fitting into your broader career goals? Exploring what draws you to them might help clarify your feelings around applying to these programs. It's important to remember that many academic programs value diverse backgrounds and unique perspectives. You might bring skills or insights from your own experiences that aren't strictly technical but equally valuable. When you're feeling overwhelmed by concerns of taking the wrong path, it might help to consider that most paths can lead to fulfilling areas, even if they're different from what you originally envisioned. Finding your path is often more about exploration and growth along the way than adhering to a strict plan from the outset.
+                </div>
+                <div class="message user-message">
+                    The right path to me feels like being able to grow technically and being able to make an impact. I feel like I need the former to do the latter.
+                </div>
+                <div class="message ai-message clickable" data-response-id="s2-ai-3">
+                    It's deeply meaningful that you're focused on growth and making an impact—those are powerful motivators. It's understandable that you see technical growth as a pathway to making a difference, and it's great that you've identified what's important to you. Could you share more about the areas or projects where you hope to make an impact? Understanding what specific contributions you want to make might help clarify the steps you need to take to get there. While it's true that technical expertise can be crucial, remember that impact often comes from a blend of skills, including communication, collaboration, and creativity. These qualities can be developed in various ways, not just through formal technical training. Have you noticed moments in the past where you've made an impact, even if they weren't technically oriented? Reflecting on these experiences might provide useful insights into how you can leverage your existing skills to achieve your goals.
+                </div>
+                <div class="message user-message">
+                    This is good to reflect on. Thank you.
+                </div>
+                <div class="message ai-message clickable" data-response-id="s2-ai-4">
+                    I'm glad to hear that reflection could be helpful for you. It shows a lot of awareness to pause and consider different aspects of your journey. If any new thoughts or feelings come up while you're reflecting, I'm here to listen and explore them with you. Taking time to understand yourself better can be a powerful step forward, and I'm here to support you along the way.
                 </div>
             </div>
         </div>
@@ -36,89 +108,431 @@
                 <h2>Response Comparison</h2>
             </div>
             <div class="comparison-container">
-                <div class="comparison-section">
-                    <h3 class="response-label">Response 1 (to "feeling overwhelmed")</h3>
+                <div class="empty-state" id="empty-state">
+                    <p>Click on a therapist response to see its strategy annotations</p>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="ai-1">
+                    <h3 class="response-label">Response to "feeling sad today"</h3>
 
                     <div class="comparison-item ai-response">
                         <div class="response-header">AI Therapist:</div>
                         <div class="response-text">
-                            <span class="highlight-reframing">I understand you're feeling overwhelmed with work.</span>
-                            <span class="highlight-distraction">Let's identify the specific sources of stress.</span>
-                            <span class="highlight-grounding">Can you list the main tasks that are overwhelming you?</span>
+                            <span class="text-segment" data-strategies="active-listening">I'm sorry to hear that you're feeling sad today.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions">Would you like to share more about what's been going on?</span>
                         </div>
                         <div class="techniques">
-                            <strong>Key Strategies:</strong>
-                            <span class="technique-tag reframing">Reframing</span>
-                            <span class="technique-tag distraction">Distraction</span>
-                            <span class="technique-tag grounding">Grounding</span>
-                        </div>
-                    </div>
-
-                    <div class="comparison-item human-response">
-                        <div class="response-header">Human Therapist:</div>
-                        <div class="response-text">
-                            <span class="highlight-modeling">That sounds really hard. I'm here with you.</span>
-                            <span class="highlight-grounding">What's that overwhelm feel like for you right now?</span>
-                        </div>
-                        <div class="techniques">
-                            <strong>Key Strategies:</strong>
-                            <span class="technique-tag modeling">Modeling</span>
-                            <span class="technique-tag grounding">Grounding</span>
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="comparison-section">
-                    <h3 class="response-label">Response 2 (to "can't keep up")</h3>
+                <div class="comparison-section hidden" data-response-id="ai-2">
+                    <h3 class="response-label">Response to "stressed about projects"</h3>
 
                     <div class="comparison-item ai-response">
                         <div class="response-header">AI Therapist:</div>
                         <div class="response-text">
-                            <span class="highlight-reframing">This feeling of time scarcity is common in high-pressure situations.</span>
-                            <span class="highlight-distraction">Let's approach this systematically: What are your top three priorities this week, and how much time do you estimate each requires?</span>
+                            <span class="text-segment" data-strategies="active-listening,validation,empathy">It sounds like you're under a lot of pressure with those deadlines coming up. That can be really overwhelming.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions,reflection">How have you been managing your time and stress so far with these projects?</span>
                         </div>
                         <div class="techniques">
-                            <strong>Key Strategies:</strong>
-                            <span class="technique-tag reframing">Reframing</span>
-                            <span class="technique-tag distraction">Distraction</span>
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="reflection">Reflection</span>
                         </div>
                     </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="ai-3">
+                    <h3 class="response-label">Response to "procrastinating"</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="empathy,normalization">It sounds like there's been a lot on your plate lately, and procrastination can sometimes be our way of coping when things feel too much.</span>
+                            <span class="text-segment" data-strategies="validation">It's understandable to feel overwhelmed when you have multiple responsibilities.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions">What do you think might help you break things down into smaller, more manageable tasks?</span>
+                            <span class="text-segment" data-strategies="cognitive-reframing">Sometimes, setting small goals and rewarding ourselves with breaks can ease the process. What do you think about that approach?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="cognitive-reframing">Cognitive Reframing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="ai-4">
+                    <h3 class="response-label">Response to "sounds good"</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="active-listening,validation">I'm glad to hear that breaking tasks down feels like a good approach for you. Recognizing a strategy that resonates with you is an important step.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions">Is there a specific small task or first step you're thinking of starting with? Sometimes having a clear starting point can make the larger task feel less daunting.</span>
+                            <span class="text-segment" data-strategies="empathy,normalization">Remember, it's okay to take things one step at a time. Giving yourself permission to do so can also help alleviate some pressure.</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="human-1">
+                    <h3 class="response-label">Response to "feeling sad today"</h3>
 
                     <div class="comparison-item human-response">
                         <div class="response-header">Human Therapist:</div>
                         <div class="response-text">
-                            <span class="highlight-modeling">I hear you saying you can't keep up, and that must be exhausting.</span>
-                            <span class="highlight-grounding">Before we dive into the tasks, I'm curious—when you notice that feeling of not keeping up, where do you feel it in your body?</span>
+                            <span class="text-segment" data-strategies="open-ended-questions">Tell me more about why you're feeling this way today</span>
                         </div>
                         <div class="techniques">
-                            <strong>Key Strategies:</strong>
-                            <span class="technique-tag modeling">Modeling</span>
-                            <span class="technique-tag grounding">Grounding</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="human-2">
+                    <h3 class="response-label">Response to "stressed about projects"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="empathy,validation,open-ended-questions">Ah I hear you, tell me about how this stress feels to you right now</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="human-3">
+                    <h3 class="response-label">Response to "guilty and overwhelmed"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="open-ended-questions">Where do you think these feelings of guilt come from?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="human-4">
+                    <h3 class="response-label">Response to "not productive enough"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="open-ended-questions,cognitive-reframing">In an ideal world, what would your productivity behaviors look like?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="cognitive-reframing">Cognitive Reframing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="human-5">
+                    <h3 class="response-label">Response to "ideal productivity"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="validation,open-ended-questions">I see I see, how did it feel talking about all of this today?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 2: PhD Application Anxiety - AI Responses -->
+                <div class="comparison-section hidden" data-response-id="s2-ai-1">
+                    <h3 class="response-label">Response to "stressed about PhD applications"</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="validation,empathy">It's understandable to feel stressed out and sad when facing something as significant as PhD applications.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions,active-listening">Could you share more about what's been particularly challenging or upsetting about the application process for you?</span>
+                            <span class="text-segment" data-strategies="normalization,empathy">Applying to PhD programs can be an overwhelming experience due to the high expectations and uncertainty involved. It's normal to feel this way, as many others in similar situations experience these emotions too.</span>
+                            <span class="text-segment" data-strategies="cognitive-reframing,open-ended-questions">Sometimes it helps to break down the process into smaller, manageable steps, focusing on one thing at a time. Have you tried any strategies that work for you when dealing with stress?</span>
+                            <span class="text-segment" data-strategies="empathy,cognitive-reframing">Remember, self-compassion is important during this time. Acknowledging your efforts and the courage it takes to pursue your goals can be empowering.</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                            <span class="technique-tag clickable-tag" data-strategy="cognitive-reframing">Cognitive Reframing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="s2-ai-2">
+                    <h3 class="response-label">Response to "wrong path in life"</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="active-listening,empathy">It sounds like you're experiencing a lot of worry about the future and the direction your life might take, which is a common concern when making significant decisions like applying to PhD programs.</span>
+                            <span class="text-segment" data-strategies="validation,normalization">Feeling uncertain about whether you're on the right path is a normal part of the decision-making process. It's understandable to be concerned about applying to programs where you don't perceive yourself as having the exact background they might be looking for.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions,reflection">What aspects of these technical programs appeal to you, and how do you see them fitting into your broader career goals? Exploring what draws you to them might help clarify your feelings around applying to these programs.</span>
+                            <span class="text-segment" data-strategies="cognitive-reframing,normalization">It's important to remember that many academic programs value diverse backgrounds and unique perspectives. You might bring skills or insights from your own experiences that aren't strictly technical but equally valuable.</span>
+                            <span class="text-segment" data-strategies="cognitive-reframing,normalization">When you're feeling overwhelmed by concerns of taking the wrong path, it might help to consider that most paths can lead to fulfilling areas, even if they're different from what you originally envisioned. Finding your path is often more about exploration and growth along the way than adhering to a strict plan from the outset.</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="reflection">Reflection</span>
+                            <span class="technique-tag clickable-tag" data-strategy="cognitive-reframing">Cognitive Reframing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="s2-ai-3">
+                    <h3 class="response-label">Response to "growth and impact"</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="empathy,validation">It's deeply meaningful that you're focused on growth and making an impact—those are powerful motivators. It's understandable that you see technical growth as a pathway to making a difference, and it's great that you've identified what's important to you.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions,active-listening">Could you share more about the areas or projects where you hope to make an impact? Understanding what specific contributions you want to make might help clarify the steps you need to take to get there.</span>
+                            <span class="text-segment" data-strategies="cognitive-reframing,psychoeducation">While it's true that technical expertise can be crucial, remember that impact often comes from a blend of skills, including communication, collaboration, and creativity. These qualities can be developed in various ways, not just through formal technical training.</span>
+                            <span class="text-segment" data-strategies="reflection,normalization">Have you noticed moments in the past where you've made an impact, even if they weren't technically oriented? Reflecting on these experiences might provide useful insights into how you can leverage your existing skills to achieve your goals.</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="cognitive-reframing">Cognitive Reframing</span>
+                            <span class="technique-tag clickable-tag" data-strategy="psychoeducation">Psychoeducation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="reflection">Reflection</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="s2-ai-4">
+                    <h3 class="response-label">Response to "good to reflect"</h3>
+
+                    <div class="comparison-item ai-response">
+                        <div class="response-header">AI Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="reflection,validation">I'm glad to hear that reflection could be helpful for you. It shows a lot of awareness to pause and consider different aspects of your journey.</span>
+                            <span class="text-segment" data-strategies="active-listening,open-ended-questions">If any new thoughts or feelings come up while you're reflecting, I'm here to listen and explore them with you.</span>
+                            <span class="text-segment" data-strategies="empathy,normalization">Taking time to understand yourself better can be a powerful step forward, and I'm here to support you along the way.</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="reflection">Reflection</span>
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="active-listening">Active Listening</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 2: PhD Application Anxiety - Human Responses -->
+                <div class="comparison-section hidden" data-response-id="s2-human-1">
+                    <h3 class="response-label">Response to "stressed about PhD applications"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="acknowledgement,empathy">Hi — thank you so much for reaching out.</span>
+                            <span class="text-segment" data-strategies="empathy">I'm so sorry to hear that you've been feeling so stressed.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions">Can I ask more about what about applying to PhD programs is making you feel sad?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="acknowledgement">Acknowledgement</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="s2-human-2">
+                    <h3 class="response-label">Response to "wrong path in life"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="validation">That definitely sounds like a lot.</span>
+                            <span class="text-segment" data-strategies="empathy,validation,reflection">That's a huge burden to be carrying by yourself, when one decision like this seems so significant for the grander scheme of things.</span>
+                            <span class="text-segment" data-strategies="open-ended-questions">What do you mean by the "wrong" or "right" path? What do these look like for you?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="empathy">Empathy</span>
+                            <span class="technique-tag clickable-tag" data-strategy="reflection">Reflection</span>
+                            <span class="technique-tag clickable-tag" data-strategy="open-ended-questions">Open-Ended Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="s2-human-3">
+                    <h3 class="response-label">Response to "growth and impact"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="validation">Yeah for sure..</span>
+                            <span class="text-segment" data-strategies="normalization,reflection">It seems like you're looking for a program that would be able to foster your growth technically so that you can make an impact in the future, so it feels like there's a lot hinging on your acceptance into these programs, is that correct?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="validation">Validation</span>
+                            <span class="technique-tag clickable-tag" data-strategy="normalization">Normalization</span>
+                            <span class="technique-tag clickable-tag" data-strategy="reflection">Reflection</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section hidden" data-response-id="s2-human-4">
+                    <h3 class="response-label">Response to "yes, thank you"</h3>
+
+                    <div class="comparison-item human-response">
+                        <div class="response-header">Human Therapist:</div>
+                        <div class="response-text">
+                            <span class="text-segment" data-strategies="cognitive-reframing">What can you do today that will help you stay grounded?</span>
+                        </div>
+                        <div class="techniques">
+                            <span class="technique-tag clickable-tag" data-strategy="cognitive-reframing">Cognitive Reframing</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Panel 3: Human Conversation -->
+        <!-- Panel 3: Human Therapist Conversation -->
         <div class="panel" id="human-panel">
             <div class="panel-header">
-                <h2>Human Conversation</h2>
-                <span class="panel-number">2</span>
+                <h2>Human Therapist Conversation</h2>
             </div>
-            <div class="chat-container">
+
+            <!-- Session 1: Academic Stress & Procrastination -->
+            <div class="chat-container session-content hidden" data-session="session1">
                 <div class="message user-message">
-                    I've been feeling really overwhelmed with work lately.
+                    I am feeling sad today
                 </div>
-                <div class="message therapist-message">
-                    That sounds really hard. I'm here with you. What's that overwhelm feel like for you right now?
+                <div class="message therapist-message clickable" data-response-id="human-1">
+                    Tell me more about why you're feeling this way today
                 </div>
                 <div class="message user-message">
-                    There's just so much to do and not enough time. I can't seem to keep up.
+                    I am really stressed because I have two big projects due tomorrow that are worth a lot of my grade
                 </div>
-                <div class="message therapist-message">
-                    I hear you saying you can't keep up, and that must be exhausting. Before we dive into the tasks, I'm curious—when you notice that feeling of not keeping up, where do you feel it in your body?
+                <div class="message therapist-message clickable" data-response-id="human-2">
+                    Ah I hear you, tell me about how this stress feels to you right now
                 </div>
+                <div class="message user-message">
+                    I feel really guilty and overwhelmed, because I have been procrastinating and have had a lot going on.
+                </div>
+                <div class="message therapist-message clickable" data-response-id="human-3">
+                    Where do you think these feelings of guilt come from?
+                </div>
+                <div class="message user-message">
+                    I feel guilty that I was not as productive as I should have been
+                </div>
+                <div class="message therapist-message clickable" data-response-id="human-4">
+                    In an ideal world, what would your productivity behaviors look like?
+                </div>
+                <div class="message user-message">
+                    In an ideal world I would love to get all of my work done ahead of time and not procrastinate
+                </div>
+                <div class="message therapist-message clickable" data-response-id="human-5">
+                    I see I see, how did it feel talking about all of this today?
+                </div>
+                <div class="message user-message">
+                    It felt great! Thank you so much for your help
+                </div>
+            </div>
+
+            <!-- Session 2: PhD Application Anxiety -->
+            <div class="chat-container session-content" data-session="session2">
+                <div class="message user-message">
+                    Hello! I'm very stressed out right now because I feel very sad about applying to PhD applications.
+                </div>
+                <div class="message therapist-message clickable" data-response-id="s2-human-1">
+                    Hi — thank you so much for reaching out. I'm so sorry to hear that you've been feeling so stressed. Can I ask more about what about applying to PhD programs is making you feel sad?
+                </div>
+                <div class="message user-message">
+                    I'm scared I'm gonna end up on the wrong path in life. I feel like a not insignificant chunk of my applications are programs where I have a decent shot at getting in, but that's likely attributed to the fact that their faculty in question are as technical, but I feel like applying to technical programs is a long-shot when I don't have as much have a pure technical background.
+                </div>
+                <div class="message therapist-message clickable" data-response-id="s2-human-2">
+                    That definitely sounds like a lot. That's a huge burden to be carrying by yourself, when one decision like this seems so significant for the grander scheme of things. What do you mean by the "wrong" or "right" path? What do these look like for you?
+                </div>
+                <div class="message user-message">
+                    The right path to me feels like being able to grow technically and being able to make an impact. I feel like I need the former to do the latter.
+                </div>
+                <div class="message therapist-message clickable" data-response-id="s2-human-3">
+                    Yeah for sure.. It seems like you're looking for a program that would be able to foster your growth technically so that you can make an impact in the future, so it feels like there's a lot hinging on your acceptance into these programs, is that correct?
+                </div>
+                <div class="message user-message">
+                    Yes, thank you!
+                </div>
+                <div class="message therapist-message clickable" data-response-id="s2-human-4">
+                    What can you do today that will help you stay grounded?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Session Modal -->
+    <div class="modal-overlay" id="add-session-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add New Session</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-section">
+                    <label class="upload-label">AI Therapist Conversation</label>
+                    <div class="upload-dropzone" id="ai-dropzone">
+                        <div class="dropzone-content">
+                            <span class="dropzone-icon">📄</span>
+                            <span class="dropzone-text">Drag & drop JSON file here</span>
+                            <span class="dropzone-subtext">or click to browse</span>
+                        </div>
+                        <input type="file" class="file-input" id="ai-file-input" accept=".json">
+                    </div>
+                </div>
+                <div class="upload-section">
+                    <label class="upload-label">Human Therapist Conversation</label>
+                    <div class="upload-dropzone" id="human-dropzone">
+                        <div class="dropzone-content">
+                            <span class="dropzone-icon">📄</span>
+                            <span class="dropzone-text">Drag & drop JSON or TXT file here</span>
+                            <span class="dropzone-subtext">or click to browse</span>
+                        </div>
+                        <input type="file" class="file-input" id="human-file-input" accept=".json,.txt">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn cancel-btn" id="modal-cancel">Cancel</button>
+                <button class="modal-btn submit-btn" id="modal-submit">Create Session</button>
             </div>
         </div>
     </div>

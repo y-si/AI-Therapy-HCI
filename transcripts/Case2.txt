@@ -1,0 +1,21 @@
+﻿Client (C): Hello! I'm very stressed out right now because I feel very sad about applying to PhD applications.
+Therapist (T): Hi — thank you so much for reaching out. I’m so sorry to hear that you’ve been feeling so stressed. Can I ask more about what about applying to PhD programs is making you feel sad?  
+* Strategies:
+   * “Hi — thank you so much for reaching out.”: Acknowledgement, empathy
+   * “I’m so sorry to hear that you’ve been feeling so stressed.”: Empathy
+   * “Can I ask more about what about applying to PhD programs is making you feel sad?”: open ended question focusing on emotion
+C: I'm scared I'm gonna end up on the wrong path in life. I feel like a not insignificant chunk of my applications are programs where I have a decent shot at getting in, but that's likely attributed to the fact that their faculty in question are as technical, but I feel like applying to technical programs is a long-shot when I don't have as much have a pure technical background.
+T: That definitely sounds like a lot. That’s a huge burden to be carrying by yourself, when one decision like this seems so significant for the grander scheme of things. What do you mean by the “wrong” or “right” path? What do these look like for you? 
+* Strategies:
+   * “That definitely sounds like a lot.”: Validation
+   * “That’s a huge burden to be carrying by yourself, when one decision like this seems so significant for the grander scheme of things.”: Empathy, validation, repeating back
+   * “What do you mean by the “wrong” or “right” path? What do these look like for you?”: Open ended questions 
+C: The right path to me feels like being able to grow technically and being able to make an impact. I feel like I need the former to do the latter.
+T: Yeah for sure.. It seems like you’re looking for a program that would be able to foster your growth technically so that you can make an impact in the future, so it feels like there’s a lot hinging on your acceptance into these programs, is that correct? 
+* Strategies: 
+   * “Yeah for sure..”: Validation
+   * “It seems like you’re looking for a program that would be able to foster your growth technically so that you can make an impact in the future, so it feels like there’s a lot hinging on your acceptance into these programs, is that correct?”: Normalization, repeating back (bc usually person tends to share more abt specific part of situation they want to share abt when you repeat to them what they just said to you)
+C: Yes, thank you!
+T: What can you do today that will help you stay grounded?
+* Strategies:
+   * “What can you do today that will help you stay grounded?”: cognitive reframing; person seems worried about the future, so grounding them in what they can do right now / today as they leave the room can help ease stress
